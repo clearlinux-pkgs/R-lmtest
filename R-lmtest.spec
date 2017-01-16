@@ -4,34 +4,56 @@
 #
 Name     : R-lmtest
 Version  : 0.9
-Release  : 26
+Release  : 27
 URL      : http://cran.r-project.org/src/contrib/lmtest_0.9-33.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/lmtest_0.9-33.tar.gz
 Summary  : Testing Linear Regression Models
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
+Requires: R-lmtest-lib
 Requires: R-zoo
+Requires: R-car
+BuildRequires : R-car
 BuildRequires : R-zoo
 BuildRequires : clr-R-helpers
 
 %description
 No detailed description available
 
+%package lib
+Summary: lib components for the R-lmtest package.
+Group: Libraries
+
+%description lib
+lib components for the R-lmtest package.
+
+
 %prep
 %setup -q -c -n lmtest
 
 %build
+export LANG=C
+export SOURCE_DATE_EPOCH=1484542339
 
 %install
 rm -rf %{buildroot}
+export SOURCE_DATE_EPOCH=1484542339
 export LANG=C
+export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export LDFLAGS="$LDFLAGS  -Wl,-z -Wl,relro"
 mkdir -p %{buildroot}/usr/lib64/R/library
-R CMD INSTALL --install-tests --build  -l %{buildroot}/usr/lib64/R/library lmtest
+R CMD INSTALL --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} --build  -l %{buildroot}/usr/lib64/R/library lmtest
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
+export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=intel.com,localhost
+export no_proxy=localhost
 export _R_CHECK_FORCE_SUGGESTS_=false
 R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library lmtest
 
@@ -67,5 +89,8 @@ R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/lib
 /usr/lib64/R/library/lmtest/help/paths.rds
 /usr/lib64/R/library/lmtest/html/00Index.html
 /usr/lib64/R/library/lmtest/html/R.css
-/usr/lib64/R/library/lmtest/libs/lmtest.so
 /usr/lib64/R/library/lmtest/libs/symbols.rds
+
+%files lib
+%defattr(-,root,root,-)
+/usr/lib64/R/library/lmtest/libs/lmtest.so
