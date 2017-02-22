@@ -4,9 +4,9 @@
 #
 Name     : R-lmtest
 Version  : 0.9
-Release  : 27
-URL      : http://cran.r-project.org/src/contrib/lmtest_0.9-33.tar.gz
-Source0  : http://cran.r-project.org/src/contrib/lmtest_0.9-33.tar.gz
+Release  : 28
+URL      : http://cran.r-project.org/src/contrib/lmtest_0.9-35.tar.gz
+Source0  : http://cran.r-project.org/src/contrib/lmtest_0.9-35.tar.gz
 Summary  : Testing Linear Regression Models
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
@@ -33,11 +33,11 @@ lib components for the R-lmtest package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1484542339
+export SOURCE_DATE_EPOCH=1487768283
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1484542339
+export SOURCE_DATE_EPOCH=1487768283
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
