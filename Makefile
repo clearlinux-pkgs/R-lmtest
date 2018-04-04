@@ -1,5 +1,5 @@
 PKG_NAME := R-lmtest
-URL := http://cran.r-project.org/src/contrib/lmtest_0.9-35.tar.gz
-
+URL = https://cran.r-project.org/src/contrib/lmtest_0.9-36.tar.gz
+ARCHIVES = 
 
 include ../common/Makefile.common
