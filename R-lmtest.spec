@@ -4,7 +4,7 @@
 #
 Name     : R-lmtest
 Version  : 0.9.36
-Release  : 47
+Release  : 48
 URL      : https://cran.r-project.org/src/contrib/lmtest_0.9-36.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lmtest_0.9-36.tar.gz
 Summary  : Testing Linear Regression Models
@@ -39,11 +39,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1522850201
+export SOURCE_DATE_EPOCH=1523314251
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1522850201
+export SOURCE_DATE_EPOCH=1523314251
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
