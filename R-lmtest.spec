@@ -4,20 +4,20 @@
 #
 Name     : R-lmtest
 Version  : 0.9.36
-Release  : 60
+Release  : 61
 URL      : https://cran.r-project.org/src/contrib/lmtest_0.9-36.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lmtest_0.9-36.tar.gz
 Summary  : Testing Linear Regression Models
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
-Requires: R-lmtest-lib
+Requires: R-lmtest-lib = %{version}-%{release}
 Requires: R-car
 Requires: R-strucchange
 Requires: R-zoo
 BuildRequires : R-car
 BuildRequires : R-strucchange
 BuildRequires : R-zoo
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
 for diagnostic checking in linear regression models. Furthermore,
@@ -39,11 +39,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523314251
+export SOURCE_DATE_EPOCH=1552872654
 
 %install
+export SOURCE_DATE_EPOCH=1552872654
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1523314251
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -78,8 +78,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library lmtest|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  lmtest || :
 
 
 %files
@@ -114,7 +113,7 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/lmtest/help/paths.rds
 /usr/lib64/R/library/lmtest/html/00Index.html
 /usr/lib64/R/library/lmtest/html/R.css
-/usr/lib64/R/library/lmtest/libs/symbols.rds
+/usr/lib64/R/library/lmtest/tests/Examples/lmtest-Ex.Rout.save
 
 %files lib
 %defattr(-,root,root,-)
