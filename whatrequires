@@ -1,17 +1,11 @@
 # This file contains recursive sources that require this package
 R-AER
-R-DescTools
-R-VIM
-R-car
+R-betareg
 R-dynlm
-R-expsmooth
 R-fRegression
 R-forecast
-R-mi
 R-multcomp
 R-multiwayvcov
 R-plm
-R-sandwich
 R-systemfit
 R-vcd
-R-vcdExtra
