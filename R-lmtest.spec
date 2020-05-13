@@ -4,7 +4,7 @@
 #
 Name     : R-lmtest
 Version  : 0.9.37
-Release  : 74
+Release  : 75
 URL      : https://cran.r-project.org/src/contrib/lmtest_0.9-37.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lmtest_0.9-37.tar.gz
 Summary  : Testing Linear Regression Models
@@ -12,12 +12,8 @@ Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
 Requires: R-lmtest-lib = %{version}-%{release}
 Requires: R-zoo
-BuildRequires : R-car
-BuildRequires : R-sandwich
-BuildRequires : R-strucchange
 BuildRequires : R-zoo
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 for diagnostic checking in linear regression models. Furthermore,
@@ -33,21 +29,22 @@ lib components for the R-lmtest package.
 
 %prep
 %setup -q -c -n lmtest
+cd %{_builddir}/lmtest
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571856653
+export SOURCE_DATE_EPOCH=1589407541
 
 %install
-export SOURCE_DATE_EPOCH=1571856653
+export SOURCE_DATE_EPOCH=1589407541
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib

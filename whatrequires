@@ -4,8 +4,8 @@ R-betareg
 R-dynlm
 R-fRegression
 R-forecast
-R-multcomp
 R-multiwayvcov
 R-plm
+R-prais
 R-systemfit
 R-vcd
