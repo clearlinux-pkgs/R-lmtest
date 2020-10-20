@@ -4,7 +4,7 @@
 #
 Name     : R-lmtest
 Version  : 0.9.38
-Release  : 78
+Release  : 79
 URL      : https://cran.r-project.org/src/contrib/lmtest_0.9-38.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lmtest_0.9-38.tar.gz
 Summary  : Testing Linear Regression Models
