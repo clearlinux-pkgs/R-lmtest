@@ -4,7 +4,7 @@
 #
 Name     : R-lmtest
 Version  : 0.9.39
-Release  : 90
+Release  : 91
 URL      : https://cran.r-project.org/src/contrib/lmtest_0.9-39.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lmtest_0.9-39.tar.gz
 Summary  : Testing Linear Regression Models
@@ -36,10 +36,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1636398170
+export SOURCE_DATE_EPOCH=1641048768
 
 %install
-export SOURCE_DATE_EPOCH=1636398170
+export SOURCE_DATE_EPOCH=1641048768
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -116,3 +116,4 @@ R CMD check --no-manual --no-examples --no-codoc lmtest || :
 %defattr(-,root,root,-)
 /usr/lib64/R/library/lmtest/libs/lmtest.so
 /usr/lib64/R/library/lmtest/libs/lmtest.so.avx2
+/usr/lib64/R/library/lmtest/libs/lmtest.so.avx512
