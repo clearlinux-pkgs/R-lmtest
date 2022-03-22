@@ -4,6 +4,7 @@ R-betareg
 R-dynlm
 R-fRegression
 R-forecast
+R-mice
 R-multcomp
 R-plm
 R-pscl
