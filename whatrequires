@@ -4,10 +4,10 @@ R-betareg
 R-dynlm
 R-fRegression
 R-forecast
-R-mice
 R-multcomp
 R-plm
 R-pscl
+R-sandwich
 R-systemfit
 R-texreg
 R-vcd
